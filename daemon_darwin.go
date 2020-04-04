@@ -128,9 +128,9 @@ func (darwin *darwinRecord) Remove() (string, error) {
 func (darwin *darwinRecord) Start() (string, error) {
 	startAction := "Starting " + darwin.description + ":"
 
-	if ok, err := checkPrivileges(); !ok {
-		return startAction + failed, err
-	}
+// 	if ok, err := checkPrivileges(); !ok {
+// 		return startAction + failed, err
+// 	}
 
 	if !darwin.isInstalled() {
 		return startAction + failed, ErrNotInstalled
@@ -151,9 +151,9 @@ func (darwin *darwinRecord) Start() (string, error) {
 func (darwin *darwinRecord) Stop() (string, error) {
 	stopAction := "Stopping " + darwin.description + ":"
 
-	if ok, err := checkPrivileges(); !ok {
-		return stopAction + failed, err
-	}
+// 	if ok, err := checkPrivileges(); !ok {
+// 		return stopAction + failed, err
+// 	}
 
 	if !darwin.isInstalled() {
 		return stopAction + failed, ErrNotInstalled
